@@ -84,6 +84,69 @@ void OnStart()
       totalTimeToCheck--;
       Alert("Your total time to check is: " + totalTimeToCheck);
       
+      //--------- Assignment Operations
+      Alert("---------Assignment Operations---------");
+      //|Symbol|------------------Operation----------------------|---------Example--------|--Analog---|
+      //|  =   | Assignment of the value x to the variable y     | y = x                  |           |
+      //|  +=  | Increase of the variable y by x                 | y += x                 | y = y + x |
+      //|  -=  | Reduction of the variable y by x                | y -= x                 | y = y - x |
+      //|  *=  | Multiplication of the variable y by x           | y *= x                 | y = y * x |
+      //|  /=  | Division of the variable y by x                 | y /= x                 | y = y / x |
+      //|  %=  | Residue of division of the variable y by x      | y %= x                 | y = y % x |
+      //|---------------------------------------------------------------------------------------------|
       
+      double totalProfit = 1000.00;
+      double tradeProfit = 20.0;
+      
+      //totalProfit = totalProfit + tradeProfit;
+      totalProfit += tradeProfit;
+      Alert("Your total profit after winning the last trade is: " + totalProfit);
+      
+      //totalProfit = totalProfit - tradeProfit;
+      totalProfit -= tradeProfit;
+      Alert("Your total profit after lossing the last trade is: " + totalProfit);
+      // or
+      tradeProfit = -20.0;
+      totalProfit += tradeProfit;
+      Alert("Your total profit after lossing the last trade is: " + totalProfit);
+      
+      //--------- Relational Operations
+      Alert("---------Relational Operations---------");
+      //|Symbol|------------------Operation----------------------|---------Example--------|
+      //|  ==  | True, if x is equal to y                        | x == y                 |
+      //|  !=  | True, if x is not equal to y                    | x != y                 |
+      //|  <   | True, if x is less than y                       | x < y                  |
+      //|  >   | True, if x is more than y                       | x > y                  |
+      //|  <=  | True, if x is equal to or less than y           | x <= y                 |
+      //|  >=  | True, if x is equal to or more than y           | x >= y                 |
+      //|---------------------------------------------------------------------------------|
+      
+      string dayOfWeek = "Monday";
+      Alert("Today is Tuesday? " + (dayOfWeek == "Tuesday")); //false
+      Alert("Today is not Tuesday? " + (dayOfWeek != "Tuesday")); //true
+      Alert("What day is today? " + dayOfWeek);
+      
+      double stopLossPrice = 1.77777;
+      double bidPrice = 1.77778;
+      Alert("Is the bid price smaller or equal to my stop loss price? " + (bidPrice <= stopLossPrice)); //false
+      bidPrice = 1.77776;
+      Alert("Is the bid price smaller or equal to my stop loss price? " + (bidPrice <= stopLossPrice)); //true
+      bidPrice = Bid;
+      Alert("What is the bid price on this chart? " + bidPrice);
+      
+      //--------- Logical Operations
+      Alert("---------Logical Operations---------");
+      //|Symbol|------------------Operation----------------------|-----Example-----|--------------------Explanations-------------------|
+      //|  !   | NOT (logical negation)                          | !x              | TRUE(1), if the value of the operand is FALSE(0); |
+      //|      |                                                 |                 | FALSE(0), if the value of the operand is TRUE(1); |
+      //|------|-------------------------------------------------|-----------------|---------------------------------------------------|
+      //|  ||  | OR (logical disjunction)                        | x < 5 || x > 7  | TRUE(1), if any value of the values is true       |
+      //|------|-------------------------------------------------|-----------------|---------------------------------------------------|
+      //|  &&  | AND (logical cojunction)                        | x == 3 && y < 5 | TRUE(1), if all values are true                   |
+      //|------------------------------------------------------------------------------------------------------------------------------|
+      
+      bidPrice = 1.77766;
+      bool bIsPriceBellowStop = bidPrice <= stopLossPrice;
+      Alert("Is price not bellow stop? (means it should be above): " + !bIsPriceBellowStop + " because it is bellow stop");
   }
 //+------------------------------------------------------------------+
