@@ -13,7 +13,7 @@
 void OnStart()
   {
 //---
-   Alert("If/else statements");
+   Alert("If/else if/else and switch statements");
    //if-else
    double entryPrice = 1.77542;
    int maxLossInPips = 20;
@@ -32,9 +32,23 @@ void OnStart()
    Alert("entryPrice: " + entryPrice);
    Alert("Stop Loss sent at: " + stopLossPrice);
    
+   //switch
+   //if - else if - else
+   int numDayOfWeek = DayOfWeek();
+   string dayOfWeek;
    
-   //if-else if-else
-   string dayOfWeek = "Sunday";
+   //in this language, switches only work on integers
+   switch (numDayOfWeek)
+   {
+      case 1: dayOfWeek = "Monday"; break;
+      case 2: dayOfWeek = "Tuesday"; break;
+      case 3: dayOfWeek = "Wednesday"; break;
+      case 4: dayOfWeek = "Thursday"; break;
+      case 5: dayOfWeek = "Friday"; break;
+      case 6: dayOfWeek = "Saturday"; break;
+      case 0: dayOfWeek = "Sunday"; break;
+      default: dayOfWeek = "Error";
+   }
    
    if (dayOfWeek == "Monday")
    {
@@ -47,6 +61,10 @@ void OnStart()
    else if(dayOfWeek == "Friday")
    {
       Alert("We are " + dayOfWeek + ". Don't enter new trades and close existing trades");
+   }
+   else if(dayOfWeek == "Error")
+   {
+      Alert("Error, day of week doesn't exists");
    }
    else
    {
