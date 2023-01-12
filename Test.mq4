@@ -65,7 +65,7 @@ void OnStart()
       
       double entryPrice = 1.75241;
       double exitPrice = 1.75741;
-      double pipValue = 0.0001;
+      double pipValue = 0.0001; // pip value for most currencies except JPY
       double pipsGenerated = MathRound((exitPrice - entryPrice) / pipValue); //We use MathRound here because the way that MT4 works sometimes
                                                                              //gives us a number very close to what it should really be, so we
                                                                              //have to round it. I should explore this later.

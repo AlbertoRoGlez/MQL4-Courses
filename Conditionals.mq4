@@ -37,7 +37,7 @@ void OnStart()
    int numDayOfWeek = DayOfWeek();
    string dayOfWeek;
    
-   //in this language, switches only work on integers
+   //in this language, switches only work on integers and strings
    switch (numDayOfWeek)
    {
       case 1: dayOfWeek = "Monday"; break;
